@@ -30,7 +30,7 @@ namespace AshMind.Code.Usage.Tests.Of.Assemblies {
 
         private IAssemblyData MockAssembly(params IAssemblyData[] references) {
             var mock = new Mock<IAssemblyData>();
-            mock.ExpectGet(x => x.References).Returns(references ?? new IAssemblyData[0]);
+            mock.SetupGet(x => x.References).Returns(references ?? new IAssemblyData[0]);
 
             return mock.Object;
         }

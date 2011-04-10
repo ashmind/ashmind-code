@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Libraries", ".Libraries", 
 		.Libraries\AshMind.Extensions.dll = .Libraries\AshMind.Extensions.dll
 		.Libraries\ClrTest.Reflection.ILReader.dll = .Libraries\ClrTest.Reflection.ILReader.dll
 		.Libraries\ConsoleFx.dll = .Libraries\ConsoleFx.dll
-		.Libraries\Moq.dll = .Libraries\Moq.dll
-		.Libraries\Moq.xml = .Libraries\Moq.xml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Caliburn", "Caliburn", "{8DB9871E-8FD1-456C-8021-D6D16F8119CD}"
