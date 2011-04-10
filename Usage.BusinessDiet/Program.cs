@@ -9,7 +9,6 @@ using ConsoleFx;
 using ConsoleFx.Validators;
 
 using AshMind.Code.Analysis;
-using AshMind.Code.Analysis;
 using AshMind.Code.Usage.BusinessDiet.SummaryFormats;  
 using AshMind.Extensions;
 
