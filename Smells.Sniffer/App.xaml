@@ -1,0 +1,9 @@
+﻿<Application x:Class="AshMind.Code.Smells.Sniffer.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:storage="clr-namespace:AshMind.Code.Smells.Sniffer.Storage"
+    StartupUri="MainWindow.xaml">
+  <Application.Resources>
+    <storage:NullStorage x:Key="applicationStorage" />
+  </Application.Resources>
+</Application>

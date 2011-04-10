@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="AshMind.Code.Smells.Sniffer.Views.Controls.PropertyGrid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mvc="http://schemas.bluespire.com/wpf/2008/Caliburn"
+    xmlns:integration="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+    xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms">
+  
+  <integration:WindowsFormsHost Margin="-17,10,-2,0">
+    <forms:PropertyGrid x:Name="properyGrid"
+                          PropertyValueChanged="properyGrid_PropertyValueChanged"
+                          ToolbarVisible="False"
+                          PropertySort="Alphabetical"
+                          HelpVisible="False" />
+  </integration:WindowsFormsHost>
+</UserControl>

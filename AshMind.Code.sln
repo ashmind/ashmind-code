@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Libraries", ".Libraries", "{12D8AE3F-CBCF-49C8-8CD0-31D1CC8FFA79}"
+	ProjectSection(SolutionItems) = preProject
+		.Libraries\AshMind.Constructs.dll = .Libraries\AshMind.Constructs.dll
+		.Libraries\AshMind.Extensions.dll = .Libraries\AshMind.Extensions.dll
+		.Libraries\ClrTest.Reflection.ILReader.dll = .Libraries\ClrTest.Reflection.ILReader.dll
+		.Libraries\ConsoleFx.dll = .Libraries\ConsoleFx.dll
+		.Libraries\MbUnit.Framework.dll = .Libraries\MbUnit.Framework.dll
+		.Libraries\Moq.dll = .Libraries\Moq.dll
+		.Libraries\Moq.xml = .Libraries\Moq.xml
+		.Libraries\QuickGraph.Algorithms.dll = .Libraries\QuickGraph.Algorithms.dll
+		.Libraries\QuickGraph.dll = .Libraries\QuickGraph.dll
+		.Libraries\TestFu.dll = .Libraries\TestFu.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usage", "Usage\Usage.csproj", "{2CE3E81C-033D-4FB6-90AE-A1B673B4F0D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usage.BusinessDiet", "Usage.BusinessDiet\Usage.BusinessDiet.csproj", "{FAC37693-C72E-4DF5-B396-43AE24DDFCB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usage.Tests", "Usage.Tests\Usage.Tests.csproj", "{7E066ACC-2E82-4148-9365-794144063539}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smells", "Smells\Smells.csproj", "{E14E5986-D3D5-4471-BE84-D3135F36F679}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analysis", "Analysis\Analysis.csproj", "{E843E90A-9A7D-4B46-AF1E-4F787F55A048}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smells.Sniffer", "Smells.Sniffer\Smells.Sniffer.csproj", "{9DA123D2-6CC5-4379-91B2-D910BBABBB2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Caliburn", "Caliburn", "{8DB9871E-8FD1-456C-8021-D6D16F8119CD}"
+	ProjectSection(SolutionItems) = preProject
+		.Libraries\Caliburn\Caliburn.dll = .Libraries\Caliburn\Caliburn.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mdbg", "mdbg", "{F2B0339C-D995-4600-8337-5F5C5E601BA7}"
+	ProjectSection(SolutionItems) = preProject
+		.Libraries\mdbg\corapi.dll = .Libraries\mdbg\corapi.dll
+		.Libraries\mdbg\raw.dll = .Libraries\mdbg\raw.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analysis.Tests", "Analysis.Tests\Analysis.Tests.csproj", "{42ECC29A-54F5-4FBF-8314-8B075360A58C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smells.Sniffer.Tests", "Smells.Sniffer.Tests\Smells.Sniffer.Tests.csproj", "{67E93C9A-2D79-4640-A8EC-F3BFEFF61E58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CE3E81C-033D-4FB6-90AE-A1B673B4F0D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE3E81C-033D-4FB6-90AE-A1B673B4F0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE3E81C-033D-4FB6-90AE-A1B673B4F0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE3E81C-033D-4FB6-90AE-A1B673B4F0D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAC37693-C72E-4DF5-B396-43AE24DDFCB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC37693-C72E-4DF5-B396-43AE24DDFCB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC37693-C72E-4DF5-B396-43AE24DDFCB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC37693-C72E-4DF5-B396-43AE24DDFCB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E066ACC-2E82-4148-9365-794144063539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E066ACC-2E82-4148-9365-794144063539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E066ACC-2E82-4148-9365-794144063539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E066ACC-2E82-4148-9365-794144063539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E14E5986-D3D5-4471-BE84-D3135F36F679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E14E5986-D3D5-4471-BE84-D3135F36F679}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E14E5986-D3D5-4471-BE84-D3135F36F679}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E14E5986-D3D5-4471-BE84-D3135F36F679}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E843E90A-9A7D-4B46-AF1E-4F787F55A048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E843E90A-9A7D-4B46-AF1E-4F787F55A048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E843E90A-9A7D-4B46-AF1E-4F787F55A048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E843E90A-9A7D-4B46-AF1E-4F787F55A048}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DA123D2-6CC5-4379-91B2-D910BBABBB2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DA123D2-6CC5-4379-91B2-D910BBABBB2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DA123D2-6CC5-4379-91B2-D910BBABBB2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DA123D2-6CC5-4379-91B2-D910BBABBB2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42ECC29A-54F5-4FBF-8314-8B075360A58C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42ECC29A-54F5-4FBF-8314-8B075360A58C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42ECC29A-54F5-4FBF-8314-8B075360A58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42ECC29A-54F5-4FBF-8314-8B075360A58C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67E93C9A-2D79-4640-A8EC-F3BFEFF61E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67E93C9A-2D79-4640-A8EC-F3BFEFF61E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67E93C9A-2D79-4640-A8EC-F3BFEFF61E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67E93C9A-2D79-4640-A8EC-F3BFEFF61E58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8DB9871E-8FD1-456C-8021-D6D16F8119CD} = {12D8AE3F-CBCF-49C8-8CD0-31D1CC8FFA79}
+		{F2B0339C-D995-4600-8337-5F5C5E601BA7} = {12D8AE3F-CBCF-49C8-8CD0-31D1CC8FFA79}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = 
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,160 @@
+﻿<Window x:Class="AshMind.Code.Smells.Sniffer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controllers="clr-namespace:AshMind.Code.Smells.Sniffer.Controllers"
+        xmlns:mvc="http://schemas.bluespire.com/wpf/2008/Caliburn"
+        xmlns:views="clr-namespace:AshMind.Code.Smells.Sniffer.Views"
+        xmlns:model="clr-namespace:AshMind.Code.Smells.Sniffer.Model"
+        xmlns:internal="clr-namespace:AshMind.Code.Smells.Sniffer.Internal"
+        xmlns:commands="clr-namespace:AshMind.Code.Smells.Sniffer.Controllers.Commands"
+        xmlns:nodes="clr-namespace:AshMind.Code.Smells.Sniffer.Model.Nodes"
+        AllowDrop="True"
+        Title="AshMind CodeSniffer"
+        Height="400"
+        Width="800">
+ 
+  <Window.Resources>
+    <ResourceDictionary>
+      <BooleanToVisibilityConverter x:Key="visibilityConverter" />
+      
+      <internal:BoundNameScope x:Key="windowNameScope" />
+      
+      <commands:ExplainCommand x:Key="explainCommand" />
+
+      <Style TargetType="Control">
+        <Setter Property="Padding" Value="10,10,10,10" />
+      </Style>
+
+      <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="SegoeUI" />  
+      </Style>
+      
+      <Style TargetType="GridSplitter">
+        <Setter Property="Width" Value="3" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        
+        <Setter Property="Panel.ZIndex" Value="1" />       
+        
+        <Setter Property="Grid.Row" Value="1" />
+        <Setter Property="Grid.RowSpan" Value="2" />        
+      </Style>
+      
+      <Style x:Key="Header" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Background" Value="#EFEBCE" />
+        <Setter Property="Padding" Value="2" />
+        
+        <Setter Property="Grid.Row" Value="1" />
+      </Style>
+
+      <ContextMenu x:Key="codeTreeMenu">
+        <ContextMenu.Items>
+          <MenuItem Header="Explain"
+                    Command="{StaticResource explainCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TreeView}}, Path=SelectedItem}" />
+        </ContextMenu.Items>
+      </ContextMenu>      
+      
+      <Style x:Key="codeTreeNodeStyle" TargetType="TreeViewItem">
+        <Setter Property="Visibility"
+                  Value="{Binding Path=(nodes:AnalysisDataNode.Visible), Converter={StaticResource visibilityConverter}}" />
+      
+        <Setter Property="ContextMenu" Value="{StaticResource codeTreeMenu}" />
+      </Style>
+
+      <HierarchicalDataTemplate x:Key="codeTreeTemplate" DataType="{x:Type nodes:CodeTreeNode}" ItemsSource="{Binding Path=(nodes:CodeTreeNode.ChildNodes)}">
+        <StackPanel Orientation="Horizontal">
+          <Image Source="{Binding Path=(nodes:AnalysisDataNode.Icon)}" Margin="0,0,5,0" />
+          <TextBlock x:Name="textName" Text="{Binding Path=(nodes:CodeTreeNode.Text)}" VerticalAlignment="Center" />
+        </StackPanel>
+        
+        <HierarchicalDataTemplate.Triggers>
+          <DataTrigger Binding="{Binding Path=(nodes:CodeTreeNode.VisibleOnlyBecauseOfChildren)}" Value="True">
+            <Setter TargetName="textName" Property="Foreground" Value="DarkGray" />
+          </DataTrigger>
+        </HierarchicalDataTemplate.Triggers>
+      </HierarchicalDataTemplate>
+    </ResourceDictionary>
+  </Window.Resources>
+  
+  <mvc:Presenter.Binding>
+    <controllers:CodeTreeController x:Name="controller" />
+  </mvc:Presenter.Binding>
+  
+  <Grid x:Name="mainGrid">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="140" />      
+      <ColumnDefinition Width="250" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    
+    <!--ToolBar Grid.ColumnSpan="3" Grid.Row="0" Name="toolBar">
+      <Button>
+        <TextBlock Text="Explain" />
+      </Button>
+    </ToolBar -->
+
+    <TextBlock Text="Smells" Style="{StaticResource Header}" />
+    
+    <views:SmellListView x:Name="smellList" Grid.Row="2" Grid.Column="0" BorderThickness="0" Margin="2,0,0,0">
+      <mvc:View.Messages>
+        <mvc:ActionMessage NameScope="{StaticResource windowNameScope}" Trigger="SelectedSmellChanged" Action="SetFilter">
+          <mvc:Parameter Value="{Binding ElementName=smellList,
+                                         Path=(views:SmellListView.SelectedSmell).(model:SmellInfo.Smell),
+                                         Mode=OneWay}" />
+        </mvc:ActionMessage>
+      </mvc:View.Messages>
+    </views:SmellListView>
+    
+    <GridSplitter Grid.Column="1" />
+    
+    <TextBlock Text="Members" Style="{StaticResource Header}" Grid.Column="1" />
+    
+    <TreeView x:Name="codeTree"
+              Grid.Row="2"
+              Grid.Column="1"
+              
+              ItemTemplate="{StaticResource codeTreeTemplate}"
+              ItemContainerStyle="{StaticResource codeTreeNodeStyle}"
+              ItemsSource="{Binding Path=RootNodes}"
+              
+              BorderThickness="0" />
+    
+    <GridSplitter Grid.Column="2" />
+    <!-- TextBlock Text="No source code available"
+               FontSize="20"
+               Foreground="LightGray"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Grid.Column="2" / -->
+    
+    <TextBlock Text="Source code" Style="{StaticResource Header}" Grid.Column="2" />
+    
+    <!--ScrollViewer HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto"
+                  Grid.Row="1"
+                  Grid.Column="2">
+      
+      <TextBlock Text="{Binding ElementName=codeTree, Path=(TreeView.SelectedItem).(model:AnalysisDataNode.SourceCode)}" />
+    </ScrollViewer-->
+    
+    <TextBox IsReadOnly="True"
+             Text="{Binding ElementName=codeTree,
+                            Path=(TreeView.SelectedItem).(nodes:AnalysisDataNode.SourceCode),
+                            Mode=OneWay}"
+             BorderThickness="0"
+             HorizontalScrollBarVisibility="Auto"
+             VerticalScrollBarVisibility="Auto"
+             FontFamily="Consolas"
+             FontSize="11"
+             Grid.Row="2"
+             Grid.Column="2" />
+  </Grid>
+</Window>
