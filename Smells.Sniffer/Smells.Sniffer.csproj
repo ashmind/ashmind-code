@@ -60,15 +60,15 @@
   <ItemGroup>
     <Reference Include="AshMind.Constructs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\AshMind.Constructs.dll</HintPath>
+      <HintPath>..\$libraries\AshMind.Constructs.dll</HintPath>
     </Reference>
     <Reference Include="AshMind.Extensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\AshMind.Extensions.dll</HintPath>
+      <HintPath>..\$libraries\AshMind.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Caliburn, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\Caliburn\Caliburn.dll</HintPath>
+      <HintPath>..\$libraries\Caliburn\Caliburn.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">

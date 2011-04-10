@@ -54,11 +54,11 @@
   <ItemGroup>
     <Reference Include="AshMind.Extensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\AshMind.Extensions.dll</HintPath>
+      <HintPath>..\$libraries\AshMind.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="ConsoleFx, Version=1.0.2733.13186, Culture=neutral, PublicKeyToken=879729841759dc8d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\ConsoleFx.dll</HintPath>
+      <HintPath>..\$libraries\ConsoleFx.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
