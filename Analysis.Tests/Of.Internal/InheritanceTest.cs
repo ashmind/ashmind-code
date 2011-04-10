@@ -16,7 +16,7 @@ namespace AshMind.Code.Analysis.Tests.Of.Internal {
                 resolver.Resolve(typeof(TestInheritedClass).GetMethod(TestMethodName))
             );
 
-            CollectionAssert.AreEquivalent(
+            Assert.AreElementsEqualIgnoringOrder(
                 methods.ToArray(), new[] { 
                     resolver.Resolve(typeof(TestInterface).GetMethod(TestMethodName)),
                     resolver.Resolve(typeof(TestBaseClass).GetMethod(TestMethodName))

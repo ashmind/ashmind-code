@@ -18,7 +18,7 @@ namespace AshMind.Code.Usage.Tests.Of.Strategies.Specific {
         }
         // ReSharper restore EmptyConstructor
 
-        [RowTest]
+        [Test]
         [Row("Should select static constructor",       BindingFlags.Static | BindingFlags.NonPublic, true)]
         [Row("Should not select instance constructor", BindingFlags.Instance | BindingFlags.Public, false)]
         public void TestShouldSelectWithDifferentConstructors(string description, BindingFlags flags, bool shouldSelect) {

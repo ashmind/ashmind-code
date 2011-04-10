@@ -15,7 +15,7 @@ namespace AshMind.Code.Usage.Tests.Of.Strategies.Specific {
     public class CodeGeneratedMethodsSelectionStrategyTest {
         private AnalysisDataResolver analyzer;
 
-        [TestFixtureSetUp]
+        [FixtureSetUp]
         public void SetUp() {
             //AppDomain.CurrentDomain.ReflectionOnlyAssemblyResolve += (sender, args) => {
             //    return Assembly.ReflectionOnlyLoad(args.Name);
@@ -25,7 +25,7 @@ namespace AshMind.Code.Usage.Tests.Of.Strategies.Specific {
             this.analyzer = new AnalysisDataResolver();
         }
         
-        [RowTest]
+        [Test]
         [Row(typeof(ClassWithCodeGeneratedMethod),                  "CodeGeneratedMethod")]
         [Row(typeof(IInterfaceWithCodeGeneratedMethod),             "CodeGeneratedMethod")]
         [Row(typeof(CodeGeneratedClass),                            ".ctor")]

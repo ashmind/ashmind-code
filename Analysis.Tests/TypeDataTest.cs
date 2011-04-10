@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using AshMind.Extensions;
 using MbUnit.Framework;
 
 using AshMind.Code.Analysis;
@@ -27,7 +27,7 @@ namespace AshMind.Code.Analysis.Tests {
 
         #endregion
 
-        [RowTest]
+        [Test]
         [Row(typeof(TestClass),                         "TestClass")]
         [Row(typeof(TestClass<TestClass>),              "TestClass<TestClass>")]
         [Row(typeof(TestClass<TestClass<TestClass>>),   "TestClass<TestClass<TestClass>>")]
@@ -39,7 +39,7 @@ namespace AshMind.Code.Analysis.Tests {
             Assert.AreEqual(expectedName, typeData.Name);
         }
 
-        [RowTest]
+        [Test]
         [Row("Property")]
         [Row("Event")]
         public void TestGetAllMembersReturnMethodsWithCorrectDeclaringMemberFor(string memberNameAndKind) {
@@ -56,7 +56,7 @@ namespace AshMind.Code.Analysis.Tests {
             }
         }
 
-        [RowTest]
+        [Test]
         [Row("Property")]
         [Row("Event")]
         public void TestMembersExcludesAccessorsOf(string memberNameAndKind) {
@@ -64,10 +64,10 @@ namespace AshMind.Code.Analysis.Tests {
             var member = type.Members.OfType<IWithAccessors>()
                                      .Single(m => m.Name == memberNameAndKind);
 
-            CollectionAssert.IsNotSubsetOf(
-                member.Accessors.ToArray(),
-                type.Members.ToArray()
-            );
+            var typeMembersArray = type.Members.ToArray();
+            foreach (var accessor in member.Accessors) {
+                Assert.DoesNotContain(typeMembersArray, accessor);
+            }
         }
     }
 }

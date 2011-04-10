@@ -47,8 +47,8 @@ namespace AshMind.Code.Usage.Tests.Of.Extensions {
 
             var descendants = new[] { graphs[0] }.SelectDescendantsAndSelves(g => g.Links).ToArray();
 
-            CollectionAssert.AreEquivalent(graphs, descendants);
-            CollectionAssert.AllItemsAreUnique(descendants);
+            Assert.AreElementsEqualIgnoringOrder(graphs, descendants);
+            Assert.AreElementsEqualIgnoringOrder(descendants.Distinct(), descendants);
         }
     }
 }

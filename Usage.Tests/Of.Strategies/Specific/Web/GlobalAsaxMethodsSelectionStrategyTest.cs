@@ -19,7 +19,7 @@ namespace AshMind.Code.Usage.Tests.Of.Strategies.Specific.Web {
                    .SelectFrom(globalAsaxMethods, null)
                    .ToArray();
 
-            CollectionAssert.AreElementsEqual(globalAsaxMethods, selectedMethods);
+            Assert.AreElementsEqualIgnoringOrder(globalAsaxMethods, selectedMethods);
         }
     }
 }

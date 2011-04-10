@@ -12,7 +12,7 @@ using AshMind.Code.Usage.Tests.Of.Strategies.Specific.TestConstructors;
 namespace AshMind.Code.Usage.Tests.Of.Strategies.Specific {
     [TestFixture]
     public class EmptyDefaultConstructorsSelectionStrategyTest {
-        [RowTest]
+        [Test]
         [Row(typeof(ClassWithEmptyConstructor),     true)]
         [Row(typeof(EmptyClass),                    true)]
         [Row(typeof(InheritingEmptyClass),          true)]
